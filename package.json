@@ -1,0 +1,22 @@
+{
+  "name": "after-motion-backend",
+  "version": "1.0.0",
+  "description": "After Motion - HTML/CSS/JS to Video Renderer (Backend)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "vercel-build": "echo 'Build complete'"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.0"
+  },
+  "optionalDependencies": {
+    "puppeteer": "^22.0.0",
+    "puppeteer-core": "^22.0.0",
+    "@sparticuz/chromium": "^123.0.0"
+  }
+}
+
