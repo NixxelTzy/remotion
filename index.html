@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After Motion - HTML to Video Renderer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-icon">&#9654;</span>
+                <h1>After Motion</h1>
+            </div>
+            <p class="tagline">Render HTML &#8594; Video (Backend)</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container main-grid">
+
+        <!-- Left: Editor -->
+        <section class="panel editor-panel">
+            <div class="panel-header">
+                <h2>&#9998; HTML Editor</h2>
+                <div class="editor-actions">
+                    <button id="loadSampleBtn" class="btn btn-sm" title="Load Sample">&#128196; Sample</button>
+                    <button id="clearBtn" class="btn btn-sm" title="Clear">&#128465; Clear</button>
+                </div>
+            </div>
+            <textarea id="htmlEditor" spellcheck="false" placeholder="<!-- Your HTML here -->"></textarea>
+            <div class="editor-footer">
+                <button id="renderBtn" class="btn btn-primary btn-lg">
+                    &#9654; Render to Video
+                </button>
+            </div>
+        </section>
+
+        <!-- Right: Preview & Settings -->
+        <section class="panel preview-panel">
+            <div class="panel-header">
+                <h2>&#9654; Preview</h2>
+                <span id="previewStatus" class="status-badge">Ready</span>
+            </div>
+            <div class="preview-container">
+                <iframe id="previewFrame" class="preview-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+                <div id="previewOverlay" class="preview-overlay hidden">
+                    <span>&#9654; Click Render to start</span>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="settings-bar">
+                <div class="setting-group">
+                    <label for="resolution">Resolution</label>
+                    <select id="resolution">
+                        <option value="2560x1440">2K (2560×1440)</option>
+                        <option value="3840x2160">4K (3840×2160)</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="fps">FPS</label>
+                    <select id="fps">
+                        <option value="30">30</option>
+                        <option value="60">60</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="duration">Duration (s)</label>
+                    <input type="number" id="duration" min="1" max="120" value="5" />
+                </div>
+            </div>
+
+            <!-- Progress -->
+            <div id="progressArea" class="progress-area hidden">
+                <div class="progress-bar-track">
+                    <div id="progressFill" class="progress-bar-fill" style="width:0%"></div>
+                </div>
+                <p id="progressText" class="progress-text">Initializing...</p>
+                <div id="downloadArea" class="download-area hidden">
+                    <a id="downloadLink" class="btn btn-success btn-lg" download>
+                        &#11015; Download MP4
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>After Motion &mdash; HTML/CSS/JS to Video Renderer (Backend Edition). Built with &#9829;</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

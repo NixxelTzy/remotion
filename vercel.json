@@ -1,39 +1,24 @@
 {
   "version": 2,
+  "buildCommand": null,
   "builds": [
     {
       "src": "api/render.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/render",
       "dest": "/api/render.js"
-    },
-    {
-      "src": "/style.css",
-      "dest": "/public/style.css"
-    },
-    {
-      "src": "/script.js",
-      "dest": "/public/script.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/index.html"
     }
   ],
   "functions": {
     "api/render.js": {
       "memory": 1024,
-      "maxDuration": 300,
-      "includeFiles": "node_modules/@sparticuz/**"
+      "maxDuration": 300
     }
-  }
+  },
+  "cleanUrls": true
 }
 
